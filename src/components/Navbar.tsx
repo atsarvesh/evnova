@@ -18,6 +18,9 @@ const Navbar = () => {
 
   const navLinks = [
     { label: "Hackathons", to: "/hackathons" },
+    ...(isAuthenticated && user?.role === "organiser"
+      ? [{ label: "Dashboard", to: "/organiser/dashboard" }]
+      : []),
     { label: "Community", to: "/community" },
     { label: "About", to: "/about" },
   ];

@@ -33,7 +33,7 @@ export const mockHackathons: Hackathon[] = [
     participants: 342,
     teams: 86,
     organiser: "TechCorp",
-    bannerGradient: "from-primary to-evnova-blue-glow",
+    bannerGradient: "from-primary to-hackmate-blue-glow",
   },
   {
     id: "2",
@@ -51,7 +51,7 @@ export const mockHackathons: Hackathon[] = [
     participants: 128,
     teams: 32,
     organiser: "GreenFuture Inc.",
-    bannerGradient: "from-accent to-evnova-blue-glow",
+    bannerGradient: "from-accent to-hackmate-blue-glow",
   },
   {
     id: "3",
@@ -68,7 +68,7 @@ export const mockHackathons: Hackathon[] = [
     participants: 560,
     teams: 140,
     organiser: "ChainLabs",
-    bannerGradient: "from-evnova-orange to-primary",
+    bannerGradient: "from-hackmate-orange to-primary",
   },
   {
     id: "4",
