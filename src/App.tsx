@@ -13,6 +13,10 @@ import ForgotPassword from "@/pages/ForgotPassword";
 import SelectRole from "@/pages/SelectRole";
 import OrganiserDashboard from "@/pages/OrganiserDashboard";
 import CreateHackathon from "@/pages/CreateHackathon";
+import BrowseHackathons from "@/pages/BrowseHackathons";
+import HackathonDetail from "@/pages/HackathonDetail";
+import RegisterHackathon from "@/pages/RegisterHackathon";
+import ParticipantDashboard from "@/pages/ParticipantDashboard";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +36,10 @@ const App = () => (
               <Route path="/select-role" element={<SelectRole />} />
               <Route path="/organiser/dashboard" element={<OrganiserDashboard />} />
               <Route path="/organiser/create-hackathon" element={<CreateHackathon />} />
+              <Route path="/hackathons" element={<BrowseHackathons />} />
+              <Route path="/hackathons/:id" element={<HackathonDetail />} />
+              <Route path="/hackathons/:id/register" element={<RegisterHackathon />} />
+              <Route path="/participant/dashboard" element={<ParticipantDashboard />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

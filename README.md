@@ -1,31 +1,82 @@
-# Create React App
+# EVNOVA
 
-This directory is a brief example of a [Create React App](https://github.com/facebook/create-react-app) site that can be deployed to Vercel with zero configuration.
+EVNOVA is a modern hackathon platform frontend built with React + TypeScript.
+It supports organizer and participant workflows including discovery, registration, and dashboard views.
 
-## Deploy Your Own
+## Tech Stack
 
-Deploy your own Create React App project with Vercel.
+- Vite + React 18 + TypeScript
+- React Router DOM (routing)
+- Tailwind CSS + shadcn/ui (UI system)
+- Framer Motion (animations)
+- React Query (state/data utilities)
+- Vitest + Testing Library (tests)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/framework-boilerplates/create-react-app&template=create-react-app)
+## Getting Started
 
-_Live Example: https://create-react-template.vercel.app/_
+### 1) Install dependencies
 
-## Available Scripts
+```bash
+npm install
+```
 
-In the project directory, you can run:
+### 2) Run in development
 
-### `npm start`
+```bash
+npm run dev
+```
 
-Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open the local URL shown in the terminal (usually `http://localhost:5173`).
 
-The page will reload when you make changes. You may also see any lint errors in the console.
+## Scripts
 
-### `npm test`
+- `npm run dev` – start dev server
+- `npm run build` – production build
+- `npm run build:dev` – development-mode build
+- `npm run preview` – preview built app
+- `npm run lint` – run ESLint
+- `npm run test` – run tests once
+- `npm run test:watch` – run tests in watch mode
 
-Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## App Routes
 
-### `npm run build`
+- `/` – Landing page
+- `/login` – Login
+- `/signup` – Signup
+- `/forgot-password` – Forgot password
+- `/select-role` – Role selection
+- `/organiser/dashboard` – Organizer dashboard
+- `/organiser/create-hackathon` – Create hackathon
+- `/hackathons` – Browse hackathons
+- `/hackathons/:id` – Hackathon details
+- `/hackathons/:id/register` – Register for hackathon
+- `/participant/dashboard` – Participant dashboard
 
-Builds the app for production to the `build` folder.
+## Project Structure
 
-It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
+```text
+src/
+	components/      # shared components + ui primitives
+	contexts/        # auth and theme providers
+	data/            # mock data
+	hooks/           # reusable hooks
+	lib/             # utilities
+	pages/           # route pages
+	test/            # test setup and specs
+```
+
+## Deployment
+
+This project includes `vercel.json` and can be deployed to Vercel.
+
+Typical deployment flow:
+
+1. Push repository to GitHub
+2. Import project in Vercel
+3. Build command: `npm run build`
+4. Output directory: `dist`
+
+## Notes
+
+- Current app uses mock/local data in `src/data`.
+- Backend/API integration can be added later without changing route structure.
