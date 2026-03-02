@@ -46,3 +46,74 @@ export const orgHackathons: OrgHackathon[] = [
   { id: "3", title: "HealthTech Innovators", status: "draft", participants: 0, teams: 0, startDate: "2026-05-10", endDate: "2026-05-12" },
   { id: "4", title: "FinTech Disrupt 2025", status: "completed", participants: 890, teams: 223, startDate: "2025-12-01", endDate: "2025-12-03" },
 ];
+
+// submission management
+export interface Submission {
+  id: string;
+  hackathonId: string;
+  teamName: string;
+  projectTitle: string;
+  description: string;
+  members: string[];
+  techStack: string[];
+  githubUrl: string;
+  demoUrl?: string;
+  submittedAt: string;
+  scores: {
+    innovation: number;
+    execution: number;
+    design: number;
+    impact: number;
+  };
+  totalScore: number;
+  status: "pending" | "reviewed" | "shortlisted" | "winner";
+  feedback?: string;
+}
+
+export const submissions: Submission[] = [
+  {
+    id: "s1", hackathonId: "4", teamName: "Neural Ninjas", projectTitle: "AI Health Predictor",
+    description: "An ML-powered health risk assessment tool that uses patient data to predict potential conditions early.",
+    members: ["Sarvesh", "Devesh", "Krith"], techStack: ["Python", "TensorFlow", "React", "FastAPI"],
+    githubUrl: "https://github.com/atsarvesh/evnova", demoUrl: "https://example.com",
+    submittedAt: "2025-12-02", scores: { innovation: 9, execution: 8, design: 7, impact: 9 }, totalScore: 33, status: "winner",
+    feedback: "Outstanding innovation with real-world healthcare impact. Clean execution."
+  },
+  {
+    id: "s2", hackathonId: "4", teamName: "Code Wizards", projectTitle: "FinBot Advisor",
+    description: "Conversational AI assistant for personal finance management and investment recommendations.",
+    members: ["Vivek", "Jayesh"], techStack: ["Node.js", "OpenAI", "React", "PostgreSQL"],
+    githubUrl: "https://github.com/atsarvesh/evnova", demoUrl: "https://example.com",
+    submittedAt: "2025-12-02", scores: { innovation: 8, execution: 9, design: 8, impact: 7 }, totalScore: 32, status: "shortlisted",
+    feedback: "Excellent technical execution. Could improve on market differentiation."
+  },
+  {
+    id: "s3", hackathonId: "4", teamName: "Byte Builders", projectTitle: "DeFi Dashboard",
+    description: "Unified dashboard for tracking DeFi portfolio performance across multiple chains.",
+    members: ["Taylor", "Billie", "Justin", "Katy"], techStack: ["Solidity", "React", "Ethers.js", "The Graph"],
+    githubUrl: "https://github.com/atsarvesh/evnova", demoUrl: "https://example.com",
+    submittedAt: "2025-12-03", scores: { innovation: 7, execution: 7, design: 9, impact: 6 }, totalScore: 29, status: "reviewed",
+    feedback: "Beautiful design. Needs stronger technical innovation."
+  },
+  {
+    id: "s4", hackathonId: "4", teamName: "Pixel Pirates", projectTitle: "EcoTrack",
+    description: "Carbon footprint tracker for individuals with gamified sustainability challenges.",
+    members: ["Johnson", "Blake"], techStack: ["React Native", "Firebase", "Node.js"],
+    githubUrl: "https://github.com/atsarvesh/evnova", demoUrl: "https://example.com",
+    submittedAt: "2025-12-03", scores: { innovation: 6, execution: 6, design: 7, impact: 8 }, totalScore: 27, status: "reviewed",
+  },
+  {
+    id: "s5", hackathonId: "4", teamName: "Data Dynamos", projectTitle: "SmartSupply",
+    description: "AI-driven supply chain optimization platform for small businesses.",
+    members: ["Quinn Martinez", "Riley Thompson", "Sage Brown"], techStack: ["Python", "Flask", "Vue.js", "MongoDB"],
+    githubUrl: "https://github.com/atsarvesh/evnova", demoUrl: "https://example.com",
+    submittedAt: "2025-12-01", scores: { innovation: 0, execution: 0, design: 0, impact: 0 }, totalScore: 0, status: "pending",
+  },
+  {
+    id: "s6", hackathonId: "2", teamName: "Chain Breakers", projectTitle: "NFT Marketplace",
+    description: "Decentralized NFT marketplace with cross-chain bridging and social features.",
+    members: ["Sam", "Alex"], techStack: ["Solidity", "React", "IPFS", "Hardhat"],
+    githubUrl: "https://github.com/atsarvesh/evnova", demoUrl: "https://example.com",
+    submittedAt: "2026-02-21", scores: { innovation: 0, execution: 0, design: 0, impact: 0 }, totalScore: 0, status: "pending",
+  },
+];

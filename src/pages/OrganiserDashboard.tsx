@@ -157,7 +157,14 @@ const OrganiserDashboard = () => {
                       <td className="py-3 hidden md:table-cell text-muted-foreground">
                         {new Date(h.startDate).toLocaleDateString()} – {new Date(h.endDate).toLocaleDateString()}
                       </td>
-                      <td className="py-3 text-right">
+                      <td className="py-3 text-right space-x-1">
+                        {(h.status === "ongoing" || h.status === "completed") && (
+                          <Link to={`/organiser/hackathon/${h.id}/submissions`}>
+                            <Button variant="outline" size="sm" className="gap-1">
+                              <FileText className="h-3 w-3" /> Submissions
+                            </Button>
+                          </Link>
+                        )}
                         <Button variant="ghost" size="sm" className="gap-1">
                           <Eye className="h-3 w-3" /> View
                         </Button>

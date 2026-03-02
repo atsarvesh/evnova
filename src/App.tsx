@@ -17,6 +17,8 @@ import BrowseHackathons from "@/pages/BrowseHackathons";
 import HackathonDetail from "@/pages/HackathonDetail";
 import RegisterHackathon from "@/pages/RegisterHackathon";
 import ParticipantDashboard from "@/pages/ParticipantDashboard";
+import ManageSubmissions from "@/pages/ManageSubmissions";
+import Leaderboard from "@/pages/Leaderboard";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +42,8 @@ const App = () => (
               <Route path="/hackathons/:id" element={<HackathonDetail />} />
               <Route path="/hackathons/:id/register" element={<RegisterHackathon />} />
               <Route path="/participant/dashboard" element={<ParticipantDashboard />} />
+              <Route path="/organiser/hackathon/:hackathonId/submissions" element={<ManageSubmissions />} />
+              <Route path="/organiser/hackathon/:hackathonId/leaderboard" element={<Leaderboard />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
