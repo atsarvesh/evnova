@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Moon, Sun, Menu, X, Zap, LogOut, User } from "lucide-react";
+import { Moon, Sun, Menu, X, Zap, LogOut } from "lucide-react";
+import NotificationDropdown from "@/components/NotificationDropdown";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
@@ -18,9 +19,8 @@ const Navbar = () => {
 
   const navLinks = [
     { label: "Hackathons", to: "/hackathons" },
-    ...(isAuthenticated && user?.role === "organiser"
-      ? [{ label: "Dashboard", to: "/organiser/dashboard" }]
-      : []),
+    ...(isAuthenticated && user?.role === "organiser" ? [{ label: "Dashboard", to: "/organiser/dashboard" }] : []),
+    ...(isAuthenticated && user?.role === "participant" ? [{ label: "Dashboard", to: "/participant/dashboard" }] : []),
     { label: "Community", to: "/community" },
     { label: "About", to: "/about" },
   ];
@@ -34,7 +34,7 @@ const Navbar = () => {
             <Zap className="h-5 w-5 text-primary-foreground" />
           </div>
           <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            EVNOVA
+            evnova
           </span>
         </Link>
 
@@ -56,6 +56,7 @@ const Navbar = () => {
           <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </Button>
+          {isAuthenticated && <NotificationDropdown />}
           {isAuthenticated ? (
             <>
               <div className="flex items-center gap-2 rounded-full border border-border/50 bg-muted/50 px-3 py-1.5">
@@ -87,6 +88,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <div className="flex items-center gap-2 md:hidden">
+          {isAuthenticated && <NotificationDropdown />}
           <Button variant="ghost" size="icon" onClick={toggleTheme}>
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </Button>
