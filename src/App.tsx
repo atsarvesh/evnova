@@ -21,6 +21,7 @@ import HackathonDetail from "./pages/HackathonDetail";
 import RegisterHackathon from "./pages/RegisterHackathon";
 import ParticipantDashboard from "./pages/ParticipantDashboard";
 import Community from "./pages/Community";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ const App = () => (
               <Route path="/organiser/hackathon/:hackathonId/leaderboard" element={<Leaderboard />} />
               <Route path="/participant/dashboard" element={<ParticipantDashboard />} />
               <Route path="/community" element={<Community />} />
+              <Route path="/about" element={<About />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
